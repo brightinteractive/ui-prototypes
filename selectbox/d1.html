@@ -6,6 +6,7 @@
 
     <link href="css/styles.css" rel="stylesheet" type="text/css"/>
     <link href="css/select2.css" rel="stylesheet" type="text/css"/>
+    <link href="css/fonts.css" rel="stylesheet" type="text/css"/>
 
     <style type="text/css">
     
@@ -18,33 +19,53 @@
             width: 100%!important;
         }
 
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 32px;
+        }
+
         .select2-container--default .select2-selection--single {
             height: 32px;
-            line-height: 32px;
             color: #6c6c6c;
             box-sizing: border-box;
             color: #6c6c6c;
             background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 3px;
-            /*outline: none;*/
             box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
-            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;*/
+            transition: all ease-in-out .15s;
+        }
 
+        .select2-search--dropdown {
+            padding: 0;
         }
 
         .select2-container--default .select2-search--dropdown .select2-search__field {
+            position: absolute;
             width: 100%;
             top: -31px;
             left: 0;         
             box-sizing: border-box;  
-            position: absolute;
-            font-size: 13px;
-
-            padding: 6px 7px 7px;
+            padding: 8px 7px 7px;
             border: none;
             border-radius: 3px;
             outline: none;
+        }
+
+        .select2-container--default .select2-search--dropdown:before {
+            position: absolute;
+            right: 8px;
+            top: -24px;
+            font-family: 'icomoon';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            font-size: 17px;
+            text-transform: none;
+            line-height: 1;
+            z-index: 3;
+            content: "\e8b6";
+
         }
 
         .select2-container--default .select2-search--dropdown .select2-search__field:focus {
