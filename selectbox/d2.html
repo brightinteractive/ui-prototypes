@@ -96,7 +96,26 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.js-prototype').select2();
+
+            function matchStart (term, text, option) {
+                var keywords = term.split(' ');
+
+                // split the search term into words (splitting on a space).
+                // If any of the search words do not exist in the text then exit
+                for (var i = 0; i < keywords.length; i++) {
+                    if (text.toUpperCase().indexOf(keywords[i].toUpperCase()) == -1) {
+                        return false;
+                    }
+                }
+                // All of the search terms must have existed
+                return true;
+            }
+             
+            $.fn.select2.amd.require(['select2/compat/matcher'], function (oldMatcher) {
+                $('.js-prototype').select2({
+                    matcher: oldMatcher(matchStart)
+                });
+            });
 
             $('.js-prototype').on('select2:selecting', function(evt) {
                 $('.js-category').removeClass('is-populated');
