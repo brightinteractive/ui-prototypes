@@ -79,7 +79,8 @@
         
         .field__dynamic {
             opacity: 0;
-            margin-top: 0.7em;
+            display: block;
+            margin-top: 0.8em;
         }
 
         .field__dynamic.is-populated {
@@ -112,6 +113,7 @@
                 }
      
             });
+
         });
     </script>
 
@@ -471,7 +473,7 @@
 
             <div class="field"> 
                 <span class="field__title">Sickness category:</span>
-                <em class="js-category field__dynamic">-</em>
+                <em class="js-category field__dynamic is-populated">-</em>
 
             </div>
 
