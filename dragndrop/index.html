@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Drag and drop demo</title>
+	<link rel="stylesheet" type="text/css" href="dnd-styles.css">	
+</head>
+<body>
+	
+	<div class="container">
+
+		<div class="drop">
+			<div class="drop__target"></div>
+			<div class="drop__copy">
+				<div class="drop__prompt">
+					Drop your image here<br>
+					<span class="drop__subline">or, <a href="">select a file</a></span>
+				</div>
+				<div class="drop__message">Uploading...</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		$('.drop').on('click', function() {
+			$('.drop').addClass('is-accepted');
+		});
+
+	</script>
+</body>
+</html>
