@@ -1,7 +1,8 @@
 /* Fake checkbox */
 
 .feckbox__input {
-	display: none;
+	position: absolute;
+	left: -9999px;
 }
 
 .feckbox__label {
@@ -38,4 +39,9 @@
 
 .feckbox__input:checked ~ .feckbox__label > .feckbox__box:before {
 	content: "\e00d";
+}
+
+/* allow tabbing */
+.feckbox__input:focus ~ .feckbox__label > .feckbox__box {
+	outline: -webkit-focus-ring-color auto 5px;
 }
