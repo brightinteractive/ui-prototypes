@@ -1,38 +1,47 @@
 
+
+/* TODO - refactor to a grid system */
+
 .panel__collection {
 	list-style: none;
 	margin: 0;
-	margin-left: -2%;
+	margin-left: -1.5%;
 	padding: 0;
+
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .panel {
 	box-sizing: border-box;
-	float: left;
-	margin-left: 2%;
+	margin-left: 1.5%;
 	margin-bottom: 20px;
 	
 	/* lightbox panels */
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     
-    float: left;
     width: 18.5%;                           /* 5 in a row */
+}
 
-
-	@include media("small-desktop-down") {
+@media only screen and (max-width: 1000px) {
+	.panel {
 		width: 23.5%;						/* 4 in a row */
 	}
+}
 
-	@include media("large-tablet-down") {
+@media only screen and (max-width: 800px) {
+	.panel {
 		width: 31.83333333333333%;			/* 3 in a row */
 	}
+}
 
-	@include media("mobile-down") {
+@media only screen and (max-width: 430px) {
+	.panel {
 		width: 48.5%;						/* 2 in a row */
 	}
-
 }
+
 
 .panel__thumb {
 	box-sizing: border-box;
