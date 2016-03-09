@@ -1,0 +1,41 @@
+/* Fake checkbox */
+
+.feckbox__input {
+	display: none;
+}
+
+.feckbox__label {
+	box-sizing: border-box;
+	width: 70px;
+	height: 50px;
+	display: block;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.feckbox__box {
+	box-sizing: border-box;
+	display: block;
+	border-radius: 3px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border: 1px solid #fff;
+	box-shadow: inset 1px 2px 4px rgba(0,0,0,0.4);
+	font-family: 'fontawesome';
+	text-align: center;
+	color: #fff;
+}
+
+.feckbox__input:checked ~ .feckbox__label > .feckbox__box {
+	background: #2AA746;
+	box-shadow: none;
+}
+
+.feckbox__label:hover > .feckbox__box{
+	box-shadow: inset 1px 2px 4px rgba(0,0,0,0.4), 0 0 10px rgba(0,0,0,0.3);
+}
+
+.feckbox__input:checked ~ .feckbox__label > .feckbox__box:before {
+	content: "\e00d";
+}

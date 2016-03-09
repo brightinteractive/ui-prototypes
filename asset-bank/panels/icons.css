@@ -1,0 +1,17 @@
+/* Extra icons added to Asset Banks set */
+
+.icon-remove-lightbox:before {
+    content: "\e900";
+}
+.icon-add-lightbox:before {
+    content: "\e901";
+}
+.icon-pencil-square:before {
+    content: "\e902";
+}
+.icon-download2:before {
+    content: "\e903";
+}
+.icon-download-alt:before {
+    content: "\e019";
+}
