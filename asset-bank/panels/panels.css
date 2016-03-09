@@ -7,9 +7,31 @@
 }
 
 .panel {
-	width: 18%;
+	box-sizing: border-box;
 	float: left;
 	margin-left: 2%;
+	margin-bottom: 20px;
+	
+	/* lightbox panels */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    
+    float: left;
+    width: 18.5%;                           /* 5 in a row */
+
+
+	@include media("small-desktop-down") {
+		width: 23.5%;						/* 4 in a row */
+	}
+
+	@include media("large-tablet-down") {
+		width: 31.83333333333333%;			/* 3 in a row */
+	}
+
+	@include media("mobile-down") {
+		width: 48.5%;						/* 2 in a row */
+	}
+
 }
 
 .panel__thumb {
@@ -57,6 +79,21 @@
 	max-height: 100%;
 }
 
+/* media icon */
+.panel__media {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	width: 64px;
+	height: 64px;
+	margin-top: -34px;
+	margin-left: -34px;
+	opacity: 0.8;
+}
+
+
+/* Feckbox selector */
 .panel__selector {
 	position: absolute;
 	top: 0;
@@ -66,6 +103,8 @@
 	z-index: 10;
 }
 
+
+/* Buttons */
 .panel__buttons {
 	position: absolute;
 	left: 0;
@@ -75,15 +114,17 @@
 	z-index: 10;
 }
 
-.panel__buttons > div {
+.panel__buttons > .panel__dl-btn,
+.panel__buttons > .panel__add-btn,
+.panel__buttons > .panel__remove-btn {
 	opacity: 0;
-	transform: translateY(10px);
+	transform: translateY(6px);
 	transition: all 0.15s ease-out;
 	transition-property: opacity,transform;
 }
 
-.panel__buttons > :first-child {
-	transform: translateY(15px);
+.panel__buttons > .panel__dl-btn {
+	transform: translateY(10px);
 }
 
 .panel__remove-btn {
