@@ -50,7 +50,6 @@
 .stanel__thumb {
 	border-radius: 2px;
 	position: relative;
-	overflow: hidden;
 	/* account for border width: */
 	padding-bottom: 100%;
 	height: 0;
@@ -65,21 +64,15 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-justify-content: center;
-	-ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	        align-items: center;
 }
 
 .stanel__img-wrap > img {
-	display: block;
 	max-width: 100%;
 	max-height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 /* media icon */
@@ -122,6 +115,16 @@
 
 .stanel__remove-btn.stanel__remove-btn {
 	display: none;
+}
+
+.stanel__remove-btn.stanel__remove-btn  i {
+	opacity: 0.6;
+}
+
+/* Status flag */
+.stanel__flag {
+	position: absolute;
+	right: 10px;
 }
 
 

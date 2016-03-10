@@ -23,7 +23,6 @@
 	background: #fff;
 	border: 1px solid #fff;
 	box-shadow: inset 1px 2px 4px rgba(0,0,0,0.35);
-	transition: box-shadow 0.15s ease-out;
 	font-family: 'fontawesome';
 	text-align: center;
 	color: #fff;
@@ -44,7 +43,10 @@
 
 /* allow tabbing */
 .feckbox__input:focus ~ .feckbox__label > .feckbox__box {
-	outline: -webkit-focus-ring-color auto 5px;
+	box-shadow: inset 1px 2px 4px rgba(0,0,0,0.35), 0 0 10px rgba(0,0,0,0.3);
+}
+.feckbox__input:checked:focus ~ .feckbox__label > .feckbox__box {
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 /* less padded version */

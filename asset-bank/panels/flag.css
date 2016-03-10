@@ -1,0 +1,38 @@
+
+.flag__img {
+	width: 34px;
+}
+
+.flag__tooltip {
+	box-sizing: border-box;
+	display: none;
+	padding: 0 5px;
+	background: #222;
+	border-radius: 3px;
+	position: absolute;
+	right: -50%;
+	top: -36px;
+	color: #fff;
+	line-height: 28px;
+	box-shadow: 0 0 3px 1px rgba(0,0,0,0.25);
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+.flag__tooltip:after {
+	content: "";
+	width: 0; 
+	height: 0; 
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent; 
+	border-top: 6px solid #222;
+	position: absolute;
+	left: 50%;
+	margin-left: -3px;
+    bottom: -6px;    
+}
+
+.flag:hover > .flag__tooltip {
+	display: block;
+} 
+
