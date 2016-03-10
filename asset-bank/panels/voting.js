@@ -22,6 +22,7 @@ var voting = (function() {
 				localStorage.setItem('hasVoted', true);
 
 				disableVotes();
+
 			}
 			
 		});	
@@ -29,6 +30,7 @@ var voting = (function() {
 
 	function disableVotes() {
 		$('.js-vote').addClass('has-voted');
+		$('.vote__extra').show();
 	}
 
 	function hasUserVoted() {
