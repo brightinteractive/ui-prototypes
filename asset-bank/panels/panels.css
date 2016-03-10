@@ -15,7 +15,7 @@
 .panel {
 	box-sizing: border-box;
 	margin-left: 1.5%;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 	
 	/* lightbox panels */
     -webkit-box-sizing: border-box;
@@ -101,6 +101,10 @@
 	opacity: 0.8;
 }
 
+/* generic file icons */
+.panel__filecon {
+	height: 110px;
+}
 
 /* Feckbox selector */
 .panel__selector {
@@ -167,6 +171,11 @@
 	list-style: none;
 	margin: 0;
 	padding: 5px 0 0 0;
+}
+
+.panel__meta > li {
+	line-height: 1.2;
+	margin-bottom: 4px;
 }
 
 /* added to lightbox state */

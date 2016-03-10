@@ -7,7 +7,7 @@
 
 .feckbox__label {
 	box-sizing: border-box;
-	width: 70px;
+	width: 100px;
 	height: 50px;
 	display: block;
 	padding-top: 10px;
@@ -22,7 +22,8 @@
 	height: 20px;
 	background: #fff;
 	border: 1px solid #fff;
-	box-shadow: inset 1px 2px 4px rgba(0,0,0,0.4);
+	box-shadow: inset 1px 2px 4px rgba(0,0,0,0.35);
+	transition: box-shadow 0.15s ease-out;
 	font-family: 'fontawesome';
 	text-align: center;
 	color: #fff;
@@ -34,7 +35,7 @@
 }
 
 .feckbox__label:hover > .feckbox__box{
-	box-shadow: inset 1px 2px 4px rgba(0,0,0,0.4), 0 0 10px rgba(0,0,0,0.3);
+	box-shadow: inset 1px 2px 4px rgba(0,0,0,0.35), 0 0 10px rgba(0,0,0,0.3);
 }
 
 .feckbox__input:checked ~ .feckbox__label > .feckbox__box:before {
@@ -51,4 +52,5 @@
 .feckbox--slim > .feckbox__label {
 	height: auto;
 	padding: 8px 20px 8px 8px;
+	width: 100%;
 }
