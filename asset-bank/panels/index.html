@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="feckbox.css">
 	<link rel="stylesheet" type="text/css" href="icons.css">
 	<link rel="stylesheet" type="text/css" href="flag.css">
+	<link rel="stylesheet" type="text/css" href="vote.css">
 	<style type="text/css">
 		body {
 			padding-top: 40px;
@@ -25,21 +26,14 @@
 			color: #999;
 			font-weight: normal;
 		}
+
+		.btn {
+			
+		}
 	</style>
 </head>
 <body>
 
-	<!-- Google Analytics -->
-	<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-349139-12', 'auto');
-	ga('send', 'pageview');
-
-	</script>
 	
 	<div class="pageWrapper" style="max-width: 1065px;">
 
@@ -49,8 +43,10 @@
 				<li>These panels will appear when browsing and searching Asset Bank.</li>
 				<li>You can select the assets, add/remove from lightbox and click through to a dummy detail page.</li>
 				<li>The download links do not do anything, but show how extra functionality could be incorporated.</li>
-				<li>Please have a play with both options below and select which one you prefer.</li>
+				<li>Please have a play with both options below and indicate which you prefer at the bottom of the page.</li>
 			</ul>
+
+			
 		</div>
 	
 
@@ -1216,11 +1212,29 @@
 
 		</ul>	
 		
+		
+		<div class="hr"></div>
+		<div class="vote js-vote">
+			<a class="vote__btn js-vote-btn" href="#" data-vote="option1">I prefer Option 1</a> 
+			<a class="vote__btn js-vote-btn" href="#" data-vote="option2">I prefer Option 2</a> 
+			<a class="vote__btn js-vote-btn" href="#" data-vote="neither">I don't like either version</a>
+
+			<div class="vote__thanks">
+				Thank you for your vote
+			</div>
+		</div>
+
+		<div class="vote__extra">
+			<h2>If you have more specific email, please either reply to the email you received. Or email me directly: ben@bright-interactive.co.uk</h2>
+		</div>
 	
+		<br>
+		<br>
+
 	</div>
 
 	
-
+	
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -1267,10 +1281,23 @@
 				evt.preventDefault();
 				evt.stopPropagation();
 			});
+
+			voting.init();
 		});
 	</script>
 
 
+	<!-- Google Analytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-349139-12', 'auto');
+	ga('send', 'pageview');
+
+	</script>
 
 </body>
 </html>

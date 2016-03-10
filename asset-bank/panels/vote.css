@@ -1,0 +1,42 @@
+
+.vote {
+	position: relative;
+}
+
+.vote__btn {
+	display: inline-block;
+	padding: 10px 20px;
+	background: #e7f0f3;
+	border: 1px solid #c5dbe2;
+	border-radius: 5px;
+	margin-right: 10px;
+	font-size: 14px;
+}
+
+.vote__btn:hover {
+	background: #c5dbe2;
+}
+
+.vote__thanks {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+	background: rgba(0,0,0,0.6);
+	color: #fff;
+	font-size: 20px;
+	line-height: 41px;
+	text-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+.vote.has-voted .vote__thanks {
+	display: block;
+}
+
+
+.vote__extra {
+	
+}
