@@ -116,6 +116,12 @@
 	z-index: 10;
 }
 
+/* Status flag */
+.stanel__flag {
+	position: absolute;
+	right: 10px;
+}
+
 
 /* Buttons */
 .panel__buttons {
