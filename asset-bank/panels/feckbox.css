@@ -45,3 +45,10 @@
 .feckbox__input:focus ~ .feckbox__label > .feckbox__box {
 	outline: -webkit-focus-ring-color auto 5px;
 }
+
+/* less padded version */
+
+.feckbox--slim > .feckbox__label {
+	height: auto;
+	padding: 8px 20px 8px 8px;
+}
