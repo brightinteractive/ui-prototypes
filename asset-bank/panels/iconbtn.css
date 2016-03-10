@@ -8,7 +8,7 @@
 .iconbtn__btn {
 	border: 0;
 	background: 0;
-	padding: 10px;
+	padding: 10px 8px;
 	line-height: 16px;
 }
 
@@ -51,12 +51,19 @@
     
 }
 
-/* hover state */
-
-.iconbtn__btn:hover > i {
-	color: #444;
-}
+/* hover/active state */
 
 .iconbtn:hover > .iconbtn__tooltip {
 	display: block;
 } 
+
+.iconbtn__btn:active,
+.iconbtn__btn:focus  {
+	outline: 0;
+}
+
+.iconbtn__btn:hover > i
+.iconbtn__btn:active > i,
+.iconbtn__btn:focus > i  {
+	color: #333;
+}
