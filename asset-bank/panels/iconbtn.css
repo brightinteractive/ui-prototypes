@@ -60,7 +60,7 @@
 	outline: 0;
 }
 
-.iconbtn__btn:hover > i
+.iconbtn__btn:hover > i,
 .iconbtn__btn:active > i,
 .iconbtn__btn:focus > i  {
 	color: #333;
