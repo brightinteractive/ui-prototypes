@@ -13,7 +13,7 @@ var voting = (function() {
 			//check user hasn't already voted 
 			if (!hasUserVoted()) {
 				var voteOption = $(evt.currentTarget).data('vote');
-				ga('send', 'event', 'Panel Voting - internal', voteOption);
+				ga('send', 'event', 'Panel Voting - external', voteOption);
 
 				// store that user has voted 
 				localStorage.setItem('hasVoted', true);
