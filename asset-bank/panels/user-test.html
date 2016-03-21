@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Asset Panels</title>
+	<link rel="stylesheet" type="text/css" href="../main.css">
+	<link rel="stylesheet" type="text/css" href="panels.css">
+	<link rel="stylesheet" type="text/css" href="stanels.css">
+	<link rel="stylesheet" type="text/css" href="rndbtn.css">
+	<link rel="stylesheet" type="text/css" href="iconbtn.css">
+	<link rel="stylesheet" type="text/css" href="feckbox.css">
+	<link rel="stylesheet" type="text/css" href="icons.css">
+	<link rel="stylesheet" type="text/css" href="flag.css">
+	<link rel="stylesheet" type="text/css" href="vote.css">
+	<style type="text/css">
+		body {
+			padding-top: 40px;
+			font-size: 13px;
+		}
+
+		h2 {
+			margin-bottom: 20px;
+		}
+
+		h2 > small {
+			color: #999;
+			font-weight: normal;
+		}
+
+		hr {
+			border: 0;
+			border-bottom: 1px solid #ddd;
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+	</style>
+</head>
+<body>
+
+	
+	<div class="pageWrapper" style="max-width: 1065px;">
+		<h2>Asset Bank: Asset Panels Prototype</h2>
+		
+
+		<ul class="panel__collection">
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/portrait1.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="one" class="feckbox__input js-checkbox" />
+						<label for="one" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Picture of deer</li>
+					<li>ID: 86</li>
+				</ul>
+			</li>
+
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/landscape3.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="two" class="feckbox__input js-checkbox" />
+						<label for="two" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Someone taking a beach photo</li>
+					<li>ID: 253</li>
+				</ul>
+			</li>
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/landscape1.jpg" alt=""/>
+					</div>
+
+					<img class="panel__media" src="img/media-audio.png"/>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="three" class="feckbox__input js-checkbox" />
+						<label for="three" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Audio recording of leaves rustling</li>
+					<li>ID: 253</li>
+				</ul>
+			</li>
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/landscape2.jpg" alt=""/>
+					</div>
+					
+					<img class="panel__media" src="img/media-video.png"/>
+
+					<div class="panel__selector">
+						<input type="checkbox" id="four" class="feckbox__input js-checkbox" />
+						<label for="four" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Grand central station, New York</li>
+					<li>ID: 196</li>
+				</ul>
+			</li>	
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/landscape4.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="five" class="feckbox__input js-checkbox" />
+						<label for="five" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Woman Kayaking in life jacket</li>
+					<li>ID: 7864</li>
+				</ul>
+			</li>		
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/portrait2.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="six" class="feckbox__input js-checkbox" />
+						<label for="six" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Big Ben and the sky</li>
+					<li>ID: 145</li>
+				</ul>
+			</li>
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/square1.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="seven" class="feckbox__input js-checkbox" />
+						<label for="seven" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Square image of clouds</li>
+					<li>ID: 864</li>
+				</ul>
+			</li>
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/landscape5.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="eight" class="feckbox__input js-checkbox" />
+						<label for="eight" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Sand dunes in the Sahara desert</li>
+					<li>ID: 864</li>
+				</ul>
+			</li>
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/landscape6.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="nine" class="feckbox__input js-checkbox" />
+						<label for="nine" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Figure infront of milky way</li>
+					<li>ID: 101</li>
+				</ul>
+			</li>
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/landscape7.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="ten" class="feckbox__input js-checkbox" />
+						<label for="ten" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Pod chair in white room</li>
+					<li>ID: 864</li>
+				</ul>
+			</li>
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/file-txt1.png" alt="" class="panel__filecon"/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="eleven" class="feckbox__input js-checkbox" />
+						<label for="eleven" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Generic text file</li>
+					<li>ID: 112</li>
+				</ul>
+			</li>
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/landscape8.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="twelve" class="feckbox__input js-checkbox" />
+						<label for="twelve" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Bamboo stalks</li>
+					<li>ID: 655</li>
+				</ul>
+			</li>
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/portrait3.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="thirteen" class="feckbox__input js-checkbox" />
+						<label for="thirteen" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Autumn leaves falling</li>
+					<li>ID: 656</li>
+				</ul>
+			</li>
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/landscape9.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="fourteen" class="feckbox__input js-checkbox" />
+						<label for="fourteen" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Street car </li>
+					<li>ID: 95</li>
+				</ul>
+			</li>
+
+			<li class="panel js-panel">
+				<a href="detail.html" class="panel__thumb">
+					
+					<div class="panel__img-wrap">
+						<img src="img/landscape10.jpg" alt=""/>
+					</div>
+					
+					<div class="panel__selector">
+						<input type="checkbox" id="fifteen" class="feckbox__input js-checkbox" />
+						<label for="fifteen" class="feckbox__label">
+							<span class="feckbox__box"></span>
+						</label>
+					</div>
+
+					<div class="panel__buttons">
+						<div class="rndbtn panel__dl-btn">
+							<button class="rndbtn__btn js-download"><i class="icon-download2"></i></button>
+							<span class="rndbtn__tooltip">Download</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__add-btn">
+							<button class="rndbtn__btn"><i class="icon-add-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Add to lightbox</span>
+						</div>
+						<div class="rndbtn js-add-remove panel__remove-btn">
+							<button class="rndbtn__btn"><i class="icon-remove-lightbox"></i></button>
+							<span class="rndbtn__tooltip">Remove&nbsp;from&nbsp;lightbox</span>
+						</div>
+					</div>
+
+					<div class="panel__flag flag">
+						<img src="img/flag-incomplete.png" class="flag__img" />
+						<span class="flag__tooltip">Incomplete</span>
+					</div>
+
+				</a>
+				<ul class="panel__meta">
+					<li>Fox in the woods</li>
+					<li>ID: 113</li>
+				</ul>
+			</li>
+
+		</ul>
+
+		<br>
+		<br>
+
+
+
+	</div>
+
+	
+	
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="voting.js"></script>
+	<script type="text/javascript">
+		var lastChecked = null;
+		$(document).ready(function() {
+			var $chkboxes = $('.js-checkbox');
+
+			$chkboxes.on('change', function(evt) {
+				var $thisCheckbox = $(evt.currentTarget);
+				
+				toggleCheckbox($thisCheckbox);
+			});
+
+			$chkboxes.each(function() {
+				toggleCheckbox($(this));
+			});
+			
+			function toggleCheckbox($checkbox) {
+				var $thisPanel = $checkbox.parents('.js-panel');
+
+				if($checkbox.prop('checked')) {
+					$thisPanel.addClass('is-selected');
+				} else {
+					$thisPanel.removeClass('is-selected');
+				}
+			}
+
+			$('.js-add-remove').on('click', function(evt) {
+				evt.preventDefault();
+				var $button = $(evt.currentTarget);
+				var $panel = $button.parents('.js-panel');
+
+				$button.addClass('is-loading');
+				var delay = setTimeout(function() {
+
+					$button.removeClass('is-loading');
+
+					if ($panel.hasClass('is-added')) {
+						$panel.removeClass('is-added');
+					} else {
+						$panel.addClass('is-added');
+					}
+				}, 100);
+				
+			});
+
+			function loading($panel) {
+
+			}
+
+			$('.js-download').on('click', function(evt) {
+				evt.preventDefault();
+				evt.stopPropagation();
+			});
+
+			voting.init();
+		});
+	</script>
+
+
+	<!-- Google Analytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-349139-12', 'auto');
+	ga('send', 'pageview');
+
+	</script>
+
+</body>
+</html>
