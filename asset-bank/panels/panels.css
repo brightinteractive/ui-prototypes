@@ -111,14 +111,16 @@
 	top: 0;
 	left: 0;
 	opacity: 0;
-	transition: opacity 0.2s ease-out;
+	transition: opacity 0.1s ease-out;
 	z-index: 10;
+	width: 100%;
 }
 
 /* Status flag */
 .panel__flag {
 	position: absolute;
 	right: 10px;
+	z-index: 15;
 }
 
 
@@ -127,8 +129,7 @@
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	padding-left: 6px;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 	z-index: 10;
 }
 
@@ -155,6 +156,10 @@
 .panel:hover .panel__thumb:before,
 .panel:hover .panel__buttons {
 	opacity: 1;
+}
+
+.panel:hover .panel__selector {
+	background: rgba(0,0,0,0.25);
 }
 
 .panel:hover .panel__buttons > div {

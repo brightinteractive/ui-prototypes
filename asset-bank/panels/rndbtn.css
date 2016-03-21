@@ -1,5 +1,6 @@
 .rndbtn {
 	position: relative;
+	padding: 5px 6px;
 }
 
 .rndbtn__btn {
@@ -12,7 +13,6 @@
 	background: #444;
 	box-shadow: 0 0 3px 1px rgba(0,0,0,0.25);
 	color: #fff;
-	margin-top: 5px;
 }
 
 .rndbtn__btn > i {
@@ -24,21 +24,23 @@
 }
 
 .rndbtn__tooltip {
+	position: absolute;
 	box-sizing: border-box;
-	display: none;
+	visibility: hidden;
 	padding: 0 5px;
 	background: #222;
 	border-radius: 3px;
 	border: 1px solid #aaa;
-	position: absolute;
-	left: 40px;
-	top: 0;
+	left: 45px;
+	top: 5px;
 	min-width: 50px;
 	color: #fff;
 	line-height: 28px;
 	box-shadow: 0 0 3px 1px rgba(0,0,0,0.25);
 	font-weight: normal;
 	white-space: nowrap;
+	transition-property:visibility;
+   	transition-delay: 0.2s;
 }
 
 /* border of little pointy arrow */
@@ -80,7 +82,7 @@
 }
 
 .rndbtn:hover > .rndbtn__tooltip {
-	display: block;
+	visibility: visible;
 } 
 
 /* loading state */

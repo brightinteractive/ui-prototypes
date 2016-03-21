@@ -1250,14 +1250,24 @@
 			var $chkboxes = $('.js-checkbox');
 
 			$chkboxes.on('change', function(evt) {
-				$thisCheckbox = $(evt.currentTarget);
-				$thisPanel = $thisCheckbox.parents('.js-panel');
-				if($thisCheckbox.prop('checked')) {
+				var $thisCheckbox = $(evt.currentTarget);
+				
+				toggleCheckbox($thisCheckbox);
+			});
+
+			$chkboxes.each(function() {
+				toggleCheckbox($(this));
+			});
+			
+			function toggleCheckbox($checkbox) {
+				var $thisPanel = $checkbox.parents('.js-panel');
+
+				if($checkbox.prop('checked')) {
 					$thisPanel.addClass('is-selected');
 				} else {
 					$thisPanel.removeClass('is-selected');
 				}
-			});
+			}
 
 			$('.js-add-remove').on('click', function(evt) {
 				evt.preventDefault();

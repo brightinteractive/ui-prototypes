@@ -20,7 +20,7 @@
 /* todo: factor out tooltip to its own module */
 .iconbtn__tooltip {
 	box-sizing: border-box;
-	display: none;
+	visibility: hidden;
 	padding: 0 5px;
 	background: #222;
 	border-radius: 3px;
@@ -33,6 +33,8 @@
 	box-shadow: 0 0 3px 1px rgba(0,0,0,0.25);
 	font-weight: normal;
 	white-space: nowrap;
+	transition-property:visibility;
+   	transition-delay: 0.2s;
 }
 
 /* main bit of little pointy arrow */
@@ -50,9 +52,8 @@
 }
 
 /* hover/active state */
-
 .iconbtn:hover > .iconbtn__tooltip {
-	display: block;
+	visibility: visible;
 } 
 
 .iconbtn__btn:active,
