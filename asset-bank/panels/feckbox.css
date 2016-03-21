@@ -65,3 +65,11 @@
 	padding: 8px 20px 8px 8px;
 	width: 100%;
 }
+
+.feckbox--slim .feckbox__box {
+	margin: 0;
+}
+
+.feckbox--slim .feckbox__label:hover {
+	background: none;
+}
