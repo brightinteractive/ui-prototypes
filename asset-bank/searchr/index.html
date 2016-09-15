@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Searchr</title>
+	<link rel="stylesheet" type="text/css" href="../main.css">
+	<style type="text/css">
+
+		body {
+			padding-top: 40px;
+		}
+		
+		table.list--vcenter td {
+			vertical-align: middle;
+		}
+		
+		table.list tbody tr:nth-child(odd) {
+		    background-color: #fff;
+		}
+
+		table.list tbody tr:nth-child(even) {
+		    background-color: #f8f8f8;
+		}
+		
+		table.list th,
+		table.list td {
+		    padding: 10px 10px 10px 10px;
+		    border-width: 0;
+		    line-height: 1.33333333333333em;        /* 16px / 12px */
+		}
+		.setting__name.setting__name  {
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+		
+		.setting__value {
+			word-break: break-all;
+		}
+		.inline-edit__form {
+			display: none;
+		}
+
+		.inline-edit.is-editing > .inline-edit__value {
+			display: none;
+		}
+
+		.inline-edit.is-editing > .inline-edit__form {
+			display: block;
+		}
+		
+		.inline-edit__value {
+			display: block;
+			padding: 6px;
+			padding-right: 30px;
+			position: relative
+		}
+
+		.inline-edit__value:hover {
+			cursor: text;
+			background: #e6e6e6;
+			color: #000;
+		}
+		.inline-edit__value:hover::after {
+			font-family: 'ab-icons';
+			content: "\e041";
+			position: absolute;
+			right: 10px;
+			top: 6px;
+			font-size: 14px;
+			color: #666;
+		}
+
+		.edit-hint {
+			display: none;
+			color: #666;
+		}
+		
+		.inline-edit__value--system:hover {
+			cursor: pointer;
+		}
+
+		.inline-edit__value--system:hover::after {
+			content: '';
+		}
+
+		.inline-edit__value--system:hover > .edit-hint {
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 6px;
+		}
+		
+		.form-inline {
+			margin:0;
+		}
+
+		.msg__floater {
+			display: none;
+		}
+		
+		.search-strip {
+			background: #f5f5f5;
+			padding: 20px 10px;
+			border-top: 1px solid #ddd;
+			border-bottom: 1px solid #ddd;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<div class="pageWrapper">
+
+		<div class="msg__floater">
+			<div class="msg msg-confirm msg--notify">
+				Setting updated successfully.  If you cannot see the effect of your change then you may need to restart Asset Bank.
+			</div>
+		</div>
+
+		<h1>Find and Update Settings</h1>
+		
+		<div class="search-strip">
+		<form class="search-box search-box--wide">
+			<input type="search" name="" placeholder="Search for a setting..." class="search-box__input" style="box-shadow: none" />
+			<button class="search-box__icon" type="submit" title="Search"><i aria-hidden="true" class="icon-search"></i></button>
+		</form>
+		</div>
+
+<table class="list list--fullwidth noTopMargin" cellspacing="0" summary="List of Application Settings">
+	<colgroup>
+		<col style="width: 45%;">
+		<col>
+	</colgroup>
+
+	<tbody>
+			<tr>
+				<td class="setting__name"><strong>export-date-format</strong><br />
+					<span class="comment">The format of dates in export files</span> 
+				</td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">dd/MM/yyyy HH:mm:ss</span></td>
+
+			</tr>
+
+
+			<tr>
+				<td class="setting__name"><strong>homepage-layout</strong><br>
+				<span class="comment">The layout to use for your Asset Bank homepage.  Please note, some layouts require additional configuration in order to work correctly so do not change this setting unless you know what you are doing. 
+Current layouts are:
+classic,
+large_image</span></td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">large_image</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>workflow-enable-unsubmitted-assets</strong>
+					<br /><span class="comment">Whether to enable unsubmitted assets</span>
+				</td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">true</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>include-category-ancestor-names-in-download-filename</strong><br />
+				<span class="comment">When true if categories or access levels are specified as one of the attributes to use for generating an asset's download filename then all the ancestors of the categories or access levels an asset is in will be included in the filename (while still respecting maximum-filename-length-for-downloaded-assets).
+When false only the 'leaf' categories or access levels will be used.
+e.g. For an asset in the category 'Fruit' with a category structure of 'Food' / 'Fruit' / 'Apple' when true the filename will include 'Food-Fruit-Apple'. If false it will only include 'Apple'</span></td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">false</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>databaseUsesNationalCharacterTypes</strong>
+				<br><span class="comment">Are character datatypes using the 'national' equivalents? (i.e 'N' prefixed unicode versions NVarchar, NChar, NClob, etc.)</span></td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">true</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>enable-search-by-group</strong>
+				<br><span class="comment">Enable the 'search for assets this group can see' functionality for admin users</span> </td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">false</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>show-request-on-cd</strong>
+				<br /><span class="comment">Whether or not to show the 'Request on CD' button on the lightbox page:</span> </td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">false</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>Email Logo URL</strong>
+				<br><span class="comment">The URL of a logo to include in emails that Asset Bank sends, for example "http://demo.assetbank.co.uk/assetbank-standard/images/standard/asset_bank_logo.png". This URL should be accessible to everyone who receives emails from this Asset Bank so that all recipients can see the logo in their emails.</span>
+				</td>
+				<td class="setting__value js-inline-edit inline-edit">
+				<a href="http://www.google.co.uk" class="inline-edit__value inline-edit__value--system">- <span class="edit-hint"><i class="icon-external-link"></i> Go to setting</a></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>search-builder-enabled</strong>
+				<br /><span class="comment">Is the search builder enabled?</span></td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">true</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>finished-jobs-no-hours-to-keep</strong>
+				<br /><span class="comment">The number of hours finished (Completed or Failed) Job rows are kept in the database before they are deleted.</span> </td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">10</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>thumbnails-cropped-not-scaled</strong>
+				<br><span class="comment">True if thumbnails should be cropped rather than scaled down</span>
+				</td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">true</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>update-remote-users-on-sso-login</strong>
+<br>				<span class="comment">Should we always update the user profile with sso details on login? Doesn't apply to groups - see update-remote-users-groups-on-sso-login</span></td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">true</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>menu-items-are-visible-to-new-groups</strong></td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">true</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>post-login-redirect-exceptions</strong><br>
+				<span class="comment">Actions to which the user won't be redirected after login even if these were originally requested (before the login page was shown). Don't remove these actions!</span></td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">/action/viewHome;/action/logout;/action/deleteBatchImage;/action/viewUpdateNextImage;/action/updateBatchImage;/action/viewLogin;/action/login;/action/loginWithToken;/action/ssoAuthenticate;/action/viewSSOLogin;/action/ssoLogin;/action/ssoSessionCheck;/action/ssoCreateSession;/action/ssoHTTPRequestToken;/action/switchAssetBox</span></td>
+			</tr>
+			<tr>
+				<td class="setting__name"><strong>recently-registered-days</strong><br>
+				<span class="comment">The number of days to check for recently registered users...</span></td>
+				<td class="setting__value js-inline-edit inline-edit"><span class="inline-edit__value js-inline-edit-value">1</span></td>
+			</tr>
+	</tbody>
+</table>
+
+	
+	<div style="display: none" class="js-edit-template">
+		<div class="form-inline inline-edit__form js-inline-edit-form">
+			<input type="text" value="" class="js-inline-edit-input" /><button class="button js-inline-edit-button">Apply</button> <a href="#" class="js-inline-edit-cancel">Cancel</a>
+		</div>
+	</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		var lastChecked = null;
+		$(document).ready(function() {
+
+			var $editForm = $('.js-edit-template').html();
+
+            $('.js-inline-edit-value').on('click', function(evt) {
+            	// Store current value
+            	var $thisElem = $(evt.currentTarget),
+            		currentValue = $thisElem.text();
+            		$parent = $thisElem.parent('.js-inline-edit');
+
+            	closeAll();
+
+            	$parent.addClass('is-editing');
+            	hideMessage();
+
+
+            	if ($parent.find('.js-inline-edit-form').length === 0) {
+            		$parent.append($editForm);
+            	}
+            	$parent.find('.js-inline-edit-button').attr('disabled', false).text('Apply');
+            	$parent.find('.js-inline-edit-input').attr('disabled', false);
+            		
+            	$parent.find('.js-inline-edit-input').val(currentValue).select().keyup(function(e){
+            		if(e.keyCode == 13) {
+            			$parent.find('.js-inline-edit-button').trigger('click');
+            		}
+            	});
+
+            	$parent.find('.js-inline-edit-value').text();
+            	$parent.find('.js-inline-edit-button').on('click', function() {
+            		$parent.addClass('is-loading');
+            		$(this).attr('disabled', true).text('Working...');
+            		$parent.find('.js-inline-edit-input').attr('disabled', true);
+            		$thisElem.text($parent.find('.js-inline-edit-input').val());            		
+            		window.setTimeout(function() {
+            			$parent.removeClass('is-editing is-loading').addClass('.is-successful');
+            			showMessage();
+            		}, 500);
+            	});
+
+            	console.log($thisElem.text());
+            });
+
+            $(document).on('click', '.js-inline-edit-cancel', function(evt) {
+            	evt.preventDefault();
+            	closeAll();
+            });
+
+            function closeAll() {
+            	$('.is-editing').removeClass('is-editing');
+            }
+
+            function showMessage() {
+            	$message = $('.msg__floater');
+            	$message.show();
+            	setTimeout(function(){
+            		$message.fadeOut();
+            	}, 3000);
+            }
+
+            function hideMessage() {
+            	$('.msg__floater').hide();
+            }
+        });
+	</script>
+
+</body>
+</html>

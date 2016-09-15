@@ -55,7 +55,7 @@
 }
 
 /* darken the left of the image on hover */
-.panel__thumb:before {
+/*.panel__thumb:before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -65,7 +65,7 @@
 	opacity: 0;
 	transition: opacity 0.2s ease-out;
 	z-index: 5;
-}
+}*/
 
 
 /* intrinsic ratio treatment on thumb */
@@ -160,7 +160,7 @@
 }
 
 .panel:hover .panel__selector {
-	background: rgba(0,0,0,0.25);
+	background: rgba(0,0,0,0.3);
 }
 
 .panel:hover .panel__buttons > div {

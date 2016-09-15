@@ -11,7 +11,7 @@
 	border-radius: 50%;
 	border: 1px solid #eee;
 	background: #444;
-	box-shadow: 0 0 3px 1px rgba(0,0,0,0.25);
+	box-shadow: 0 0 2px rgba(0,0,0,0.3);
 	color: #fff;
 }
 
@@ -24,38 +24,25 @@
 }
 
 .rndbtn__tooltip {
-	position: absolute;
-	box-sizing: border-box;
-	visibility: hidden;
-	padding: 0 5px;
-	background: #222;
-	border-radius: 3px;
-	border: 1px solid #aaa;
-	left: 45px;
-	top: 5px;
-	min-width: 50px;
-	color: #fff;
-	line-height: 28px;
-	box-shadow: 0 0 3px 1px rgba(0,0,0,0.25);
-	font-weight: normal;
-	white-space: nowrap;
-	transition-property:visibility;
-   	transition-delay: 0.2s;
+    position: absolute;
+    box-sizing: border-box;
+    visibility: hidden;
+    padding: 0 5px;
+    background: #222;
+    border-radius: 3px;
+    left: 45px;
+    top: 5px;
+    min-width: 50px;
+    color: #fff;
+    line-height: 28px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.5), -2px 0 5px rgba(255,255,255,0.8);
+    font-weight: normal;
+    white-space: nowrap;
+    transition-property:visibility;
+    transition-delay: 0.2s;
 }
 
-/* border of little pointy arrow */
-.rndbtn__tooltip:before {
-	content: "";
-	width: 0; 
-	height: 0; 
-	border-top: 8px solid transparent;
-	border-bottom: 8px solid transparent; 
-	border-right: 8px solid #aaa;
-	position: absolute;
-    left: -8px;
-    top: 50%;
-    margin-top: -8px;
-}
+
 
 /* main bit of little pointy arrow */
 .rndbtn__tooltip:after {
@@ -70,8 +57,6 @@
     top: 50%;
     margin-top: -6px;
 }
-
-
 
 .rndbtn:hover > .rndbtn__btn,
 .rndbtn__btn:active,
