@@ -1,0 +1,114 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0 , 0.5);
+    display: none;
+}
+
+.modal.is-visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__panel {
+    width: 460px;
+    background: #fff;
+    border-radius: 3px;
+    position: relative;
+}
+
+.modal__header {
+    font-size: 20px;
+    margin-top: 0;
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.modal__dismiss {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    position: absolute;
+    right: 24px;
+    top: 28px;
+}
+
+.modal__dismiss > img {
+    display: block;
+    opacity: 0.5;
+}
+
+.modal__content {
+    padding: 0 24px;
+}
+
+.modal__label {
+    color: #666;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.modal__change {
+    padding: 12px 24px;
+    padding-top: 24px;
+    background: #f5f5f5;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 3px;
+    position: relative;
+}
+
+.modal__change > img {
+    opacity: 0.5;
+}
+
+.modal__actions {
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px 24px 24px 24px;
+}
+
+.button {
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: green;
+    font-size: 12px;
+    padding: 6px 18px;
+    line-height: 36px;
+    cursor: pointer;
+    background: green;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.button--text {
+    background: #fff;
+    color: green;
+}
+
+
+.original::before, 
+.new::before {
+    position: absolute;
+    top: 6px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.original::before {
+    content: "Original";
+}
+
+.new::before {
+    content: "New";
+}
