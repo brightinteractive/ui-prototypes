@@ -11,6 +11,7 @@ function handleKeydown(evt) {
     let newValue = getinputValueFromEvent(evt);
     if (evt.keyCode === 13 | evt.keyCode == 9) {
         if (faceHasInstances($container)) {
+            // ask if we want to update all instances or just this one
             populateModal(newValue, getFaceInstances($container));
             showModal();
         } else {
@@ -61,6 +62,8 @@ function enterLoadingState($faceNamer) {
 
 function exitLoadingState($faceNamer) {
     $faceNamer.removeClass('is-loading');
+    // show a tick for a second
+    // ...    
 }
 
 function getinputValueFromEvent(evt) {

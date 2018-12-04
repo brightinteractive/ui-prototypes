@@ -145,11 +145,11 @@ input:focus, button:focus {
 
 /* Loading state */
 .face__namer.is-loading .face__namer__edit-link {
-    display: block;
+    display: block !important;
     color: #888;
     pointer-events: none;
 }
 
 .face__namer.is-loading .face__namer__input {
-    display: none;
+    display: none !important;
 }
