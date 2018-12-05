@@ -38,7 +38,7 @@
         
     </div>
 
-    <div class="modal js-modal">
+    <div class="modal js-modal is-visible">
         <div class="modal__panel">
             <h3 class="modal__header">
                 Update all <span class="js-instances">8</span> instances of this face?
@@ -46,14 +46,25 @@
             <button class="modal__dismiss js-modal-dismiss"><img src="close.svg" alt=""></button>
             <div class="modal__content">
                 <div class="modal__change">
-                    <span class="original js-original">Donovan Plankk</span>
-                    <img src="arrow.svg" alt="">
-                    <span class="new js-new">Donovan Plank</span>
+
+                    <div class="modal__change__name">
+                        <span class="modal__change__name__label">Original</span>
+                        <span class="modal__change__name__value js-original">Donovan Plankk</span>
+                    </div>
+
+                    <div class="modal__change__arrow">
+                        <img src="arrow.svg" alt="">
+                    </div>
+
+                    <div class="modal__change__name">
+                        <span class="modal__change__name__label">New</span>
+                        <span class="modal__change__name__value js-new">Donovan Plankk</span>
+                    </div>
                 </div>
             </div>
             <div class="modal__actions">
-                <button class="button">Update all</button>
-                <button class="button button--text js-modal-dismiss">Just this one</button>
+                <button class="button js-modal-update-all">Update all</button>
+                <button class="button button--text js-modal-update-single">Just this one</button>
             </div>
         </div>
     </div>
