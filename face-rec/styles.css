@@ -4,6 +4,8 @@ html, body {
     padding: 0;
     margin: 0;
     background-color: #000;
+    width: 100%;
+    height: 100%;
 }
 
 body {
@@ -73,7 +75,7 @@ input:focus, button:focus {
 .face__namer {
     width: 160px;
     position: absolute;
-    top: calc(100% - 18px);
+    top: calc(100% - 8px);
     left: -26px;
     padding: 24px;
     
