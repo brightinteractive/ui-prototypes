@@ -12,21 +12,21 @@
 <body>
     <div class="asset">
         <img src="faces.jpg" alt="" class="asset__image">
-        <div class="face face--1">
-            <div class="face__namer has-name js-face-namer" data-instances="8"> 
+        <div class="face face--1 js-face">
+            <div class="face__namer has-name js-face-namer js-face-namer--multi" data-instances="8"> 
                 <input type="text" 
                     placeholder="Enter a name&hellip;" 
                     class="face__namer__input js-face-input" 
-                    value="Donovan Plankk"/>
+                    value="Donovan"/>
 
-                <a class="face__namer__edit-link js-face-edit">
-                    <span class="js-face-edit-text">Donovan Plankk</span>
+                <a class="face__namer__edit-link js-face-edit js-face-edit--multi">
+                    <span class="js-face-edit-text js-face-edit-text--multi">Donovan</span>
                     <img src="edit.svg" alt="">
                 </a>
             </div>
         </div>
 
-        <div class="face face--2">
+        <div class="face face--2 js-face">
             <div class="face__namer js-face-namer">
                 <input type="text" placeholder="Enter a name&hellip;" class="face__namer__input js-face-input" />
                 <a class="face__namer__edit-link js-face-edit">
@@ -38,10 +38,11 @@
         
     </div>
 
-    <div class="modal js-modal is-visible">
+    <!-- is-visible to show -->
+    <div class="modal js-modal">
         <div class="modal__panel">
             <h3 class="modal__header">
-                Update all <span class="js-instances">8</span> instances of this face?
+                Update all <span class="js-instances">8</span> instances of this person?
             </h3>
             <button class="modal__dismiss js-modal-dismiss"><img src="close.svg" alt=""></button>
             <div class="modal__content">
@@ -49,7 +50,7 @@
 
                     <div class="modal__change__name">
                         <span class="modal__change__name__label">Original</span>
-                        <span class="modal__change__name__value js-original">Donovan Plankk</span>
+                        <span class="modal__change__name__value js-original">Donovan</span>
                     </div>
 
                     <div class="modal__change__arrow">
@@ -58,7 +59,7 @@
 
                     <div class="modal__change__name">
                         <span class="modal__change__name__label">New</span>
-                        <span class="modal__change__name__value js-new">Donovan Plankk</span>
+                        <span class="modal__change__name__value js-new"></span>
                     </div>
                 </div>
             </div>
