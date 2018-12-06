@@ -4,7 +4,7 @@ $('.js-modal-dismiss').on('click', hideModal);
 
 const $modal = $('.js-modal');
 
-const $multiFaceNamer = $('.js-face-namer--multi');
+const $multiFace = $('.js-face--multi');
 const $multiEditText = $('.js-face-edit-text--multi');
 
 function faceHasInstances($container) {
@@ -15,16 +15,6 @@ function getFaceInstances($container) {
     return $container.data('instances');
 }
 
-function enterLoadingState($faceNamer) {
-    $faceNamer.addClass('is-loading');
-}
-
-function exitLoadingState($faceNamer) {
-    $faceNamer.removeClass('is-loading');
-    // show a tick for a second
-    // ...    
-}
-
 function applyNameChange($targetText, $targetNamer, value) {
     // Populate link
     $targetText.text(value);
@@ -33,10 +23,16 @@ function applyNameChange($targetText, $targetNamer, value) {
         $targetNamer.removeClass('has-name');
     } else {
         // show loading state for a while
-        enterLoadingState($targetNamer);
+        $targetNamer.addClass('is-loading');
+        $targetNamer.addClass('is-applying');
+    
         setTimeout(() => {
-            exitLoadingState($targetNamer);
+            $targetNamer.removeClass('is-loading');
             $targetNamer.addClass('has-name');
+
+            setTimeout(() => {
+                $targetNamer.removeClass('is-applying');
+            }, 1000);
         }, 600);
     }
 }
@@ -45,7 +41,7 @@ function updateFromModal() {
     const newVal = $modal.find('.js-new').text();
 
     hideModal();
-    applyNameChange($multiEditText, $multiFaceNamer, newVal);
+    applyNameChange($multiEditText, $multiFace, newVal);
 }
 
 function updateAllNames() {
@@ -63,6 +59,7 @@ function updateSingleName() {
 
 function showModal() {
     $modal.addClass('is-visible');
+    
 }
 
 function hideModal() {
@@ -72,11 +69,12 @@ function hideModal() {
 function populateModal(value, originalValue, instances) {
     $modal.find('.js-original').text(originalValue);
     $modal.find('.js-new').text(value);
-    $modal.find('js-instances').text(instances);
+    $modal.find('.js-instances').text(instances);
 }
 
 $('.js-face').each(function(){
     const $this = $(this);
+    const $face = $this.find('.js-face-click-zone');
     const $input = $this.find('.js-face-input');
     const $editNamer = $this.find('.js-face-edit');
     const $editText = $this.find('.js-face-edit-text');
@@ -85,13 +83,8 @@ $('.js-face').each(function(){
     let originalValue = $input.val();
 
     function attemptNameUpdate(newValue) {
-        if (newValue === originalValue) {
-            $input.blur();
-            return;
-        }
-
         if (newValue === '') {
-            applyNameChange($editText, $faceNamer, newValue)
+            applyNameChange($editText, $this, newValue)
             $faceNamer.data('instances', 0);
             return;
         }
@@ -101,16 +94,39 @@ $('.js-face').each(function(){
             populateModal(newValue, originalValue, getFaceInstances($faceNamer));
             showModal();
         } else {
-            applyNameChange($editText, $faceNamer, newValue);
+            applyNameChange($editText, $this, newValue);
         }
 
         originalValue = newValue;
+    }
+
+    function handleFaceClick() {
+        console.log('face clicked');
+        $input.select();
+        enableEditMode();
+    }
+
+    function handleFaceHover(e) {
+        console.log('hover');
+        if (e.type === 'mouseenter') {
+            showNamer();
+        }
+
+        if (e.type === 'mouseleave') {
+            hideNamer();
+        }
     }
 
     function handleKeydown(e) {
         let newValue = $input.val();
 
         if (e.keyCode === 13 | e.keyCode == 9) {
+            if (newValue === originalValue) {
+                $input.blur();
+                
+                return;
+            }
+
             attemptNameUpdate(newValue);
         }
     }
@@ -120,7 +136,21 @@ $('.js-face').each(function(){
 
         removeEditMode();
 
-        attemptNameUpdate(newValue);
+        if (newValue !== originalValue) {
+            attemptNameUpdate(newValue);
+        }
+    }
+
+    // ------------------------------------------------------------------
+    //  Namer visibility
+    // ------------------------------------------------------------------
+
+    function showNamer() {
+        $this.addClass('show-namer');    
+    }
+
+    function hideNamer() {
+        $this.removeClass('show-namer');    
     }
 
     // ------------------------------------------------------------------
@@ -128,17 +158,24 @@ $('.js-face').each(function(){
     // ------------------------------------------------------------------
 
     function enableEditMode() {
-        $faceNamer.addClass('is-editing');    
+        $this.addClass('is-editing');    
         $input.select();
     }
 
     function removeEditMode() {
-        $faceNamer.removeClass('is-editing');
+        $this.removeClass('is-editing');
     }
 
 
-    // Bind events
+    // ------------------------------------------------------------------
+    //  Bind
+    // ------------------------------------------------------------------
+
+    $face.on('click', handleFaceClick);
+    $this.on('mouseenter mouseleave', handleFaceHover);
+
     $editNamer.on('click', enableEditMode);
+    $input.on('click', enableEditMode);
     $input.on('blur', handleBlur);
     $input.on('keydown', handleKeydown)
     
