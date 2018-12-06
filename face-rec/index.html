@@ -13,6 +13,9 @@
     <div class="asset">
         <img src="faces.jpg" alt="" class="asset__image">
         <div class="face face--1 js-face js-face--multi has-name">
+            <div class="face__remover js-face-remover">
+                <img src="close.svg" alt="" class="face__remover__icon">
+            </div>
             <div class="face__click-zone js-face-click-zone"></div>
             <div class="face__namer js-face-namer" data-instances="8"> 
                 <input type="text" 
@@ -28,6 +31,11 @@
         </div>
 
         <div class="face face--2 js-face">
+            <div class="face__remover js-face-remover">
+                <img src="close.svg" alt="" class="face__remover__icon">
+                <div class="face__remover__tooltip">Remove face</div>
+            </div>
+
             <div class="face__click-zone js-face-click-zone"></div>
             <div class="face__namer js-face-namer">
                 <input type="text" placeholder="Type a name&hellip;" class="face__namer__input js-face-input" />
@@ -37,6 +45,21 @@
                 </a>
             </div>
         </div>
+
+        <!-- <div class="face face--3 js-face has-face-remover">
+                <div class="face__remover js-face-remover">
+                    <img src="close.svg" alt="" class="face__remover__icon">
+                </div>
+    
+                <div class="face__click-zone js-face-click-zone"></div>
+                <div class="face__namer js-face-namer">
+                    <input type="text" placeholder="Type a name&hellip;" class="face__namer__input js-face-input" />
+                    <a class="face__namer__edit-link js-face-edit">
+                        <span class="js-face-edit-text"></span>
+                        <img src="edit.svg" class="face__namer__edit-icon" alt="">
+                    </a>
+                </div>
+            </div> -->
         
     </div>
 

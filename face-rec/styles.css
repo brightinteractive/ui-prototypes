@@ -49,6 +49,10 @@ input:focus, button:focus {
     border-radius: 3px;
 }
 
+.face.is-removed {
+    display: none;
+}
+
 .face--1 {
     width: 11%;
     height: 20%;
@@ -61,6 +65,82 @@ input:focus, button:focus {
     height: 17%;
     left: 59%;
     top: 33%;
+}
+
+.face--3 {
+    width: 10%;
+    height: 17%;
+    left: 12%;
+    top: 17%;
+}
+
+.face__remover {
+    transition:
+        transform .1s ease,
+        opacity .1s linear;
+
+    position: absolute;
+    top: -10px;
+    right: -16px;
+    width: 24px;
+    height: 24px;
+
+    background-color: white;
+
+    border-radius: 100%;
+
+    z-index: 200;
+
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.face__remover__icon {
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+
+    margin-left: -8px;
+    margin-top: -8px;
+
+}
+
+.face__remover__tooltip {
+    transition:
+        opacity 0.1s linear,
+        visibility 0s linear 0.1s;
+
+    border-radius: 3px;
+    font-size: 12px;
+    left: 30px;
+    padding: 4px 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    width: 70px;
+    color: white;
+    background-color: #333;
+    opacity: 0;
+
+    visibility: hidden;
+}
+
+.face__remover:hover .face__remover__tooltip {
+    transition:
+        opacity 0.1s linear,
+        visibility 0s linear 0s;
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.face:not(.has-name) .face__remover {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .face__click-zone {
@@ -181,7 +261,7 @@ input:focus, button:focus {
 /* Loading state */
 .face.is-loading .face__namer__edit-link {
     display: block !important;
-    color: #888;
+    color: #999;
     pointer-events: none;
 }
 

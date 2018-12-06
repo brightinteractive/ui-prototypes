@@ -78,7 +78,7 @@ function updateSingleName() {
 function showSnackbar() {
     setTimeout(() => {
         $snackBar.addClass('is-visible');
-    }, 400);
+    }, 600);
 
     setTimeout(() => {
         $snackBar.removeClass('is-visible');
@@ -112,6 +112,7 @@ $('.js-face').each(function(){
     const $editNamer = $this.find('.js-face-edit');
     const $editText = $this.find('.js-face-edit-text');
     const $faceNamer = $this.find('.js-face-namer');
+    const $faceRemover = $this.find('.js-face-remover');
 
     $this.data('original', $input.val());
     let originalValue = $this.data('original');
@@ -153,7 +154,7 @@ $('.js-face').each(function(){
         }
     }
 
-    function handleKeydown(e) {
+    function handleKeyUp(e) {
         let newValue = $input.val();
 
         if (e.keyCode === 13 | e.keyCode == 9) {
@@ -175,6 +176,16 @@ $('.js-face').each(function(){
         if (newValue !== originalValue) {
             attemptNameUpdate(newValue);
         }
+    }
+
+
+    // ------------------------------------------------------------------
+    //  Face remover
+    // ------------------------------------------------------------------
+
+    function removeFace() {
+        $this.addClass('is-removed');
+        console.log('remove face');
     }
 
     // ------------------------------------------------------------------
@@ -213,6 +224,7 @@ $('.js-face').each(function(){
     $editNamer.on('click', enableEditMode);
     $input.on('click', enableEditMode);
     $input.on('blur', handleBlur);
-    $input.on('keydown', handleKeydown)
+    $input.on('keyup', handleKeyUp)
+    $faceRemover.on('click', removeFace);
     
 });
