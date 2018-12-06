@@ -1,11 +1,11 @@
 $('.js-modal-update-all').on('click', updateAllNames);
 $('.js-modal-update-single').on('click', updateSingleName);
-$('.js-modal-dismiss').on('click', hideModal);
+$('.js-modal-dismiss').on('click', cancelModal);
 
 const $modal = $('.js-modal');
 
 const $multiFace = $('.js-face--multi');
-const $multiEditText = $('.js-face-edit-text--multi');
+const $multiEditText = $multiFace.find('.js-face-edit-text');
 
 function faceHasInstances($container) {
     return getFaceInstances($container) > 0;
@@ -42,6 +42,12 @@ function updateFromModal() {
 
     hideModal();
     applyNameChange($multiEditText, $multiFace, newVal);
+}
+
+function cancelModal() {
+    hideModal();
+
+
 }
 
 function updateAllNames() {
