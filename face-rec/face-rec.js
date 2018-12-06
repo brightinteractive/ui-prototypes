@@ -5,10 +5,11 @@ $('.js-modal-dismiss').on('click', cancelModal);
 const $modal = $('.js-modal');
 
 const $multiFace = $('.js-face--multi');
+const $multiFaceNamer = $multiFace.find('.js-face-namer');
 const $multiEditText = $multiFace.find('.js-face-edit-text');
 const $multiInput = $multiFace.find('.js-face-input');
 
-const $snackBar = $multiFace.find('.js-snackbar');
+const $snackBar = $('.js-snackbar');
 
 function faceHasInstances($container) {
     return getFaceInstances($container) > 0;
@@ -62,12 +63,27 @@ function cancelModal() {
 
 function updateAllNames() {
     updateFromModal();
+    showSnackbar();
 }
 
 function updateSingleName() {
     updateFromModal();
+    $multiFaceNamer.data('instances', 0);
 }
 
+
+// ------------------------------------------------------------------
+//  Snackbar
+// ------------------------------------------------------------------
+function showSnackbar() {
+    setTimeout(() => {
+        $snackBar.addClass('is-visible');
+    }, 400);
+
+    setTimeout(() => {
+        $snackBar.removeClass('is-visible');
+    }, 3000);
+}
 
 // ------------------------------------------------------------------
 //  Modal
@@ -200,12 +216,3 @@ $('.js-face').each(function(){
     $input.on('keydown', handleKeydown)
     
 });
-
-
-
-
-// ------------------------------------------------------------------
-//  Init
-// ------------------------------------------------------------------
-
-// storeOriginalValue($multiFacesContainer.find('.js-face-edit-text').text());
