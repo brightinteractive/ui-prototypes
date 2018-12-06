@@ -6,6 +6,9 @@ const $modal = $('.js-modal');
 
 const $multiFace = $('.js-face--multi');
 const $multiEditText = $multiFace.find('.js-face-edit-text');
+const $multiInput = $multiFace.find('.js-face-input');
+
+const $snackBar = $multiFace.find('.js-snackbar');
 
 function faceHasInstances($container) {
     return getFaceInstances($container) > 0;
@@ -15,9 +18,10 @@ function getFaceInstances($container) {
     return $container.data('instances');
 }
 
-function applyNameChange($targetText, $targetNamer, value) {
+function applyNameChange($targetText, $targetNamer, $targetInput, value) {
     // Populate link
     $targetText.text(value);
+    $targetInput.val(value);
 
     if (value === '') {
         $targetNamer.removeClass('has-name');
@@ -41,13 +45,19 @@ function updateFromModal() {
     const newVal = $modal.find('.js-new').text();
 
     hideModal();
-    applyNameChange($multiEditText, $multiFace, newVal);
+    applyNameChange($multiEditText, $multiFace, $multiInput, newVal);
+
+    $multiFace.data('original', newVal);
 }
 
 function cancelModal() {
+    const newVal = $modal.find('.js-original').text();
+
     hideModal();
 
+    applyNameChange($multiEditText, $multiFace, $multiInput, newVal);
 
+    $multiFace.data('original', newVal);
 }
 
 function updateAllNames() {
@@ -73,6 +83,7 @@ function hideModal() {
 }
 
 function populateModal(value, originalValue, instances) {
+    console.log(originalValue);
     $modal.find('.js-original').text(originalValue);
     $modal.find('.js-new').text(value);
     $modal.find('.js-instances').text(instances);
@@ -86,24 +97,27 @@ $('.js-face').each(function(){
     const $editText = $this.find('.js-face-edit-text');
     const $faceNamer = $this.find('.js-face-namer');
 
-    let originalValue = $input.val();
+    $this.data('original', $input.val());
+    let originalValue = $this.data('original');
 
     function attemptNameUpdate(newValue) {
+        
         if (newValue === '') {
-            applyNameChange($editText, $this, newValue)
+            applyNameChange($editText, $this, $input, newValue)
             $faceNamer.data('instances', 0);
             return;
         }
 
         if (faceHasInstances($faceNamer)) {
+            originalValue = $this.data('original');
             // ask if we want to update all instances or just this one
             populateModal(newValue, originalValue, getFaceInstances($faceNamer));
             showModal();
         } else {
-            applyNameChange($editText, $this, newValue);
+            applyNameChange($editText, $this, $input, newValue);
+            $this.data('original', newValue);
+            originalValue = $this.data('original');
         }
-
-        originalValue = newValue;
     }
 
     function handleFaceClick() {
