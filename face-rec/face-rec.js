@@ -2,7 +2,11 @@ $('.js-modal-update-all').on('click', updateAllNames);
 $('.js-modal-update-single').on('click', updateSingleName);
 $('.js-modal-dismiss').on('click', cancelModal);
 
+$('.js-removal-modal-dismiss').on('click', hideRemovalModal);
+$('.js-removal-modal-confirm').on('click', removeFace);
+
 const $modal = $('.js-modal');
+const $removalModal = $('.js-removal-modal');
 
 const $multiFace = $('.js-face--multi');
 const $multiFaceNamer = $multiFace.find('.js-face-namer');
@@ -10,6 +14,9 @@ const $multiEditText = $multiFace.find('.js-face-edit-text');
 const $multiInput = $multiFace.find('.js-face-input');
 
 const $snackBar = $('.js-snackbar');
+const $removalSnackBar = $('.js-removal-snackbar');
+
+let $faceToRemove;
 
 function faceHasInstances($container) {
     return getFaceInstances($container) > 0;
@@ -63,7 +70,7 @@ function cancelModal() {
 
 function updateAllNames() {
     updateFromModal();
-    showSnackbar();
+    showSnackbar($snackBar);
 }
 
 function updateSingleName() {
@@ -75,13 +82,15 @@ function updateSingleName() {
 // ------------------------------------------------------------------
 //  Snackbar
 // ------------------------------------------------------------------
-function showSnackbar() {
+function showSnackbar($bar) {
+    $bar.removeClass('is-visible');
+
     setTimeout(() => {
-        $snackBar.addClass('is-visible');
+        $bar.addClass('is-visible');
     }, 600);
 
     setTimeout(() => {
-        $snackBar.removeClass('is-visible');
+        $bar.removeClass('is-visible');
     }, 3000);
 }
 
@@ -96,6 +105,30 @@ function showModal() {
 
 function hideModal() {
     $modal.removeClass('is-visible');
+}
+
+
+// ------------------------------------------------------------------
+//  Removal modal
+// ------------------------------------------------------------------
+
+function showRemovalModal() {
+    $removalModal.addClass('is-visible');
+}
+
+// ------------------------------------------------------------------
+//  Face remover
+// ------------------------------------------------------------------
+
+function removeFace() {
+    $faceToRemove.addClass('is-removed');
+    hideRemovalModal();
+    showSnackbar($removalSnackBar);
+    console.log('remove face');
+}
+
+function hideRemovalModal() {
+    $removalModal.removeClass('is-visible');
 }
 
 function populateModal(value, originalValue, instances) {
@@ -178,14 +211,9 @@ $('.js-face').each(function(){
         }
     }
 
-
-    // ------------------------------------------------------------------
-    //  Face remover
-    // ------------------------------------------------------------------
-
-    function removeFace() {
-        $this.addClass('is-removed');
-        console.log('remove face');
+    function handleFaceRemoval() {
+        $faceToRemove = $this;
+        showRemovalModal();
     }
 
     // ------------------------------------------------------------------
@@ -225,6 +253,6 @@ $('.js-face').each(function(){
     $input.on('click', enableEditMode);
     $input.on('blur', handleBlur);
     $input.on('keyup', handleKeyUp)
-    $faceRemover.on('click', removeFace);
+    $faceRemover.on('click', handleFaceRemoval);
     
 });

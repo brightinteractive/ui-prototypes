@@ -15,7 +15,7 @@
         <div class="face face--1 js-face js-face--multi has-name">
             <div class="face__remover js-face-remover">
                     <img src="close.svg" alt="" class="face__remover__icon">
-                    <div class="face__remover__tooltip">Remove face</div>
+                    <div class="face__remover__tooltip">Delete face</div>
                 </div>
             <div class="face__click-zone js-face-click-zone"></div>
             <div class="face__namer js-face-namer" data-instances="8"> 
@@ -34,7 +34,7 @@
         <div class="face face--2 js-face">
             <div class="face__remover js-face-remover">
                 <img src="close.svg" alt="" class="face__remover__icon">
-                <div class="face__remover__tooltip">Remove face</div>
+                <div class="face__remover__tooltip">Delete face</div>
             </div>
 
             <div class="face__click-zone js-face-click-zone"></div>
@@ -47,29 +47,30 @@
             </div>
         </div>
 
-        <!-- <div class="face face--3 js-face has-face-remover">
-                <div class="face__remover js-face-remover">
-                    <img src="close.svg" alt="" class="face__remover__icon">
-                </div>
-    
-                <div class="face__click-zone js-face-click-zone"></div>
-                <div class="face__namer js-face-namer">
-                    <input type="text" placeholder="Type a name&hellip;" class="face__namer__input js-face-input" />
-                    <a class="face__namer__edit-link js-face-edit">
-                        <span class="js-face-edit-text"></span>
-                        <img src="edit.svg" class="face__namer__edit-icon" alt="">
-                    </a>
-                </div>
-            </div> -->
-        
+        <div class="face face--3 js-face has-face-remover">
+            <div class="face__remover js-face-remover">
+                <img src="close.svg" alt="" class="face__remover__icon">
+                <div class="face__remover__tooltip">Delete face</div>
+            </div>
+
+            <div class="face__click-zone js-face-click-zone"></div>
+            <div class="face__namer js-face-namer">
+                <input type="text" placeholder="Type a name&hellip;" class="face__namer__input js-face-input" />
+                <a class="face__namer__edit-link js-face-edit">
+                    <span class="js-face-edit-text"></span>
+                    <img src="edit.svg" class="face__namer__edit-icon" alt="">
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- is-visible to show -->
     <div class="modal js-modal">
         <div class="modal__panel">
-            <h3 class="modal__header">
-                Update all <span class="js-instances">8</span> instances of this person?
-            </h3>
+            <div class="modal__header">
+                <h3 class="modal__header__title">This face is linked with others</h3>
+                <p class="modal__header__desc">This face has been linked to <strong>8</strong> others tagged with <strong class="js-original">Donovan</strong>, do you want to update all of them?</p>
+            </div>
             <button class="modal__dismiss js-modal-dismiss"><img src="close.svg" alt=""></button>
             <div class="modal__content">
                 <div class="modal__change">
@@ -91,7 +92,24 @@
             </div>
             <div class="modal__actions">
                 <button class="button js-modal-update-all">Update all</button>
-                <button class="button button--text js-modal-update-single">Just this one</button>
+                <button class="button button--text js-modal-update-single">Update just this one</button>
+            </div>
+        </div>
+        <div class="modal__dismiss-area js-modal-dismiss"></div>
+    </div>
+
+    <!-- is-visible to show -->
+    <div class="modal js-removal-modal">
+        <div class="modal__panel">
+            <div class="modal__header">
+                <h3 class="modal__header__title">Delete this face?</h3>
+                <p class="modal__header__desc">This face will be permanently deleted from this asset.</p>
+            </div>
+            <button class="modal__dismiss js-removal-modal-dismiss"><img src="close.svg" alt=""></button>
+
+            <div class="modal__actions">
+                <button class="button js-removal-modal-confirm">Accept</button>
+                <button class="button button--text js-removal-modal-dismiss">Cancel</button>
             </div>
         </div>
         <div class="modal__dismiss-area js-modal-dismiss"></div>
@@ -99,6 +117,10 @@
 
     <div class="snackbar js-snackbar">
         8 instances of this face were updated
+    </div>
+
+    <div class="snackbar js-removal-snackbar">
+        Face deleted
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

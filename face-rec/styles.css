@@ -106,7 +106,6 @@ input:focus, button:focus {
 
     margin-left: -8px;
     margin-top: -8px;
-
 }
 
 .face__remover__tooltip {
@@ -121,7 +120,7 @@ input:focus, button:focus {
     top: 50%;
     transform: translateY(-50%);
     position: absolute;
-    width: 70px;
+    width: 62px;
     color: white;
     background-color: #333;
     opacity: 0;
@@ -238,7 +237,6 @@ input:focus, button:focus {
     transform: translate3d(0,0,0);
     opacity: 0.3;
 }
-
 
 
 /* When the face has an assigned name */
