@@ -61,6 +61,8 @@ function updateFromModal() {
 function cancelModal() {
     const newVal = $modal.find('.js-original').text();
 
+    console.log(newVal);
+
     hideModal();
 
     applyNameChange($multiEditText, $multiFace, $multiInput, newVal);
@@ -124,7 +126,6 @@ function removeFace() {
     $faceToRemove.addClass('is-removed');
     hideRemovalModal();
     showSnackbar($removalSnackBar);
-    console.log('remove face');
 }
 
 function hideRemovalModal() {
@@ -132,8 +133,8 @@ function hideRemovalModal() {
 }
 
 function populateModal(value, originalValue, instances) {
-    console.log(originalValue);
     $modal.find('.js-original').text(originalValue);
+    $modal.find('.js-original-inline').text(originalValue);
     $modal.find('.js-new').text(value);
     $modal.find('.js-instances').text(instances);
 }
@@ -171,13 +172,11 @@ $('.js-face').each(function(){
     }
 
     function handleFaceClick() {
-        console.log('face clicked');
         $input.select();
         enableEditMode();
     }
 
     function handleFaceHover(e) {
-        console.log('hover');
         if (e.type === 'mouseenter') {
             showNamer();
         }
