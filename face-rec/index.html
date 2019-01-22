@@ -12,50 +12,115 @@
 <body>
     <div class="asset">
         <img src="faces.jpg" alt="" class="asset__image">
-        <div class="face face--1">
-            <div class="face__namer has-name js-face-namer" data-instances="8"> 
+        <div class="face face--1 js-face js-face--multi has-name">
+            <div class="face__remover js-face-remover">
+                    <img src="close.svg" alt="" class="face__remover__icon">
+                    <div class="face__remover__tooltip">Remove face box</div>
+                </div>
+            <div class="face__click-zone js-face-click-zone"></div>
+            <div class="face__namer js-face-namer" data-instances="8"> 
                 <input type="text" 
-                    placeholder="Enter a name&hellip;" 
+                    placeholder="Type a name&hellip;" 
                     class="face__namer__input js-face-input" 
-                    value="Donovan Plankk"/>
+                    value="Donovan"/>
 
                 <a class="face__namer__edit-link js-face-edit">
-                    <span class="js-face-edit-text">Donovan Plankk</span>
-                    <img src="edit.svg" alt="">
+                    <span class="js-face-edit-text">Donovan</span>
+                    <img src="edit.svg" class="face__namer__edit-icon" alt="">
                 </a>
             </div>
         </div>
 
-        <div class="face face--2">
+        <div class="face face--2 js-face">
+            <div class="face__remover js-face-remover">
+                <img src="close.svg" alt="" class="face__remover__icon">
+                <div class="face__remover__tooltip">Remove face box</div>
+            </div>
+
+            <div class="face__click-zone js-face-click-zone"></div>
             <div class="face__namer js-face-namer">
-                <input type="text" placeholder="Enter a name&hellip;" class="face__namer__input js-face-input" />
+                <input type="text" placeholder="Type a name&hellip;" class="face__namer__input js-face-input" />
                 <a class="face__namer__edit-link js-face-edit">
                     <span class="js-face-edit-text"></span>
-                    <img src="edit.svg" alt="">
+                    <img src="edit.svg" class="face__namer__edit-icon" alt="">
                 </a>
             </div>
         </div>
-        
+
+        <!-- <div class="face face--3 js-face has-face-remover">
+            <div class="face__remover js-face-remover">
+                <img src="close.svg" alt="" class="face__remover__icon">
+                <div class="face__remover__tooltip">Remove face box</div>
+            </div>
+
+            <div class="face__click-zone js-face-click-zone"></div>
+            <div class="face__namer js-face-namer">
+                <input type="text" placeholder="Type a name&hellip;" class="face__namer__input js-face-input" />
+                <a class="face__namer__edit-link js-face-edit">
+                    <span class="js-face-edit-text"></span>
+                    <img src="edit.svg" class="face__namer__edit-icon" alt="">
+                </a>
+            </div>
+        </div> -->
     </div>
 
+    <!-- is-visible to show -->
     <div class="modal js-modal">
         <div class="modal__panel">
-            <h3 class="modal__header">
-                Update all <span class="js-instances">8</span> instances of this face?
-            </h3>
+            <div class="modal__header">
+                <h3 class="modal__header__title">This face is linked with others</h3>
+                <p class="modal__header__desc">This face has been linked to <strong>8</strong> others tagged with <strong class="js-original-inline">Donovan</strong>, do you want to update all of them?</p>
+            </div>
             <button class="modal__dismiss js-modal-dismiss"><img src="close.svg" alt=""></button>
             <div class="modal__content">
                 <div class="modal__change">
-                    <span class="original js-original">Donovan Plankk</span>
-                    <img src="arrow.svg" alt="">
-                    <span class="new js-new">Donovan Plank</span>
+
+                    <div class="modal__change__name">
+                        <span class="modal__change__name__label">Original</span>
+                        <span class="modal__change__name__value js-original">Donovan</span>
+                    </div>
+
+                    <div class="modal__change__arrow">
+                        <img src="arrow.svg" alt="">
+                    </div>
+
+                    <div class="modal__change__name">
+                        <span class="modal__change__name__label">New</span>
+                        <span class="modal__change__name__value js-new"></span>
+                    </div>
                 </div>
             </div>
             <div class="modal__actions">
-                <button class="button">Update all</button>
-                <button class="button button--text js-modal-dismiss">Just this one</button>
+                <button class="button js-modal-update-all">Update all</button>
+                <button class="button button--text js-modal-update-single">Update just this one</button>
             </div>
         </div>
+        <div class="modal__dismiss-area js-modal-dismiss"></div>
+    </div>
+
+    <!-- is-visible to show -->
+    <div class="modal js-removal-modal">
+        <div class="modal__panel">
+            <div class="modal__header">
+                <h3 class="modal__header__title">Remove this face box?</h3>
+                <p class="modal__header__desc">The face box will be permanently removed from this image.</p>
+            </div>
+            <button class="modal__dismiss js-removal-modal-dismiss"><img src="close.svg" alt=""></button>
+
+            <div class="modal__actions">
+                <button class="button js-removal-modal-confirm">Accept</button>
+                <button class="button button--text js-removal-modal-dismiss">Cancel</button>
+            </div>
+        </div>
+        <div class="modal__dismiss-area js-removal-modal-dismiss"></div>
+    </div>
+
+    <div class="snackbar js-snackbar">
+        8 instances of this face were updated
+    </div>
+
+    <div class="snackbar js-removal-snackbar">
+        Face successfully removed
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
