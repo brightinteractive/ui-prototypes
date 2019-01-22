@@ -6,15 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tagging</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="jquery-ui-1.11.2.custom/jquery-ui.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
+
     <div class="container">
-        <div id="tagInput" class="textarea js-tags"></div>
+        <div class="inner">
+            <h2>Tagging UI Prototype</h2>
+            <p>Edit existing tags by clicking on them. Try typing in fruits to see the autocomplete working. In this case the delimeter is a comma.
+            </p>
+            <div class="field">
+                <label for="tagInput">Keywords:</label>
+                <div id="tagInput" class="textarea js-tags"></div>
+            </div>
+        </div>
+        
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
+    <script type="text/javascript" src="jquery-ui-1.11.2.custom/jquery-ui.js"></script>
     <script type="text/javascript" src="taggle.js"></script>
     <script type="text/javascript" src="tagging-behaviour.js"></script>
 </body>
