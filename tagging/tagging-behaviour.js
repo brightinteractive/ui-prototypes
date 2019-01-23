@@ -29,6 +29,14 @@ $('.js-tags').on('click', function(evt) {
     }       
 });
 
+$('.js-tags').on('input', '.taggle_input', function(evt) {
+    removeDuplicateClasses();
+});
+
+$('.js-tags').on('blur', '.taggle_input', function(evt) {
+    removeDuplicateClasses();
+});
+
 var availableTags = [
     'apple', 
     'banana', 

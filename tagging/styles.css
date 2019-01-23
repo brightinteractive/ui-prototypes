@@ -210,6 +210,7 @@ label {
 /* Handling duplicate tags */
 
 .tag.is-duplicate {
+    background: #fce4e4;
     animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
